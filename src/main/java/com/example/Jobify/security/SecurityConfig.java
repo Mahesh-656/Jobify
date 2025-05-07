@@ -95,9 +95,9 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://jobifyclient-production.up.railway.app")
-                        .allowedMethods("*")
-                        .allowCredentials(true); // ✅ Important for cookies
+                        .allowedOrigins("*")
+                        .allowedMethods("*");
+
             }
         };
     }

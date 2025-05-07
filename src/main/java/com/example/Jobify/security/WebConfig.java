@@ -38,12 +38,12 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOriginPatterns(
-                        "https://jobify-production-72be.up.railway.app/**"
+                        "*"
 
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-//                .allowCredentials(true)
+//
                 .maxAge(3600);
     }
 }
