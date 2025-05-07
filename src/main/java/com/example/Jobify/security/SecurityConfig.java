@@ -57,6 +57,7 @@ public class SecurityConfig {
                                         "/*.png",
                                         "/*.svg",
                                         "/manifest.json"
+
                                 ).permitAll()
                                 // Publicly accessible endpoints
                                 .requestMatchers(
@@ -94,7 +95,7 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:5173")
+                        .allowedOrigins("https://jobifyclient-production.up.railway.app")
                         .allowedMethods("*")
                         .allowCredentials(true); // ✅ Important for cookies
             }
