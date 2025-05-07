@@ -2,6 +2,7 @@ package com.example.Jobify.security;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -31,5 +32,18 @@ public class WebConfig implements WebMvcConfigurer {
                 .mediaType("svg", MediaType.valueOf("image/svg+xml")) // image/svg+xml
                 .mediaType("ico", MediaType.valueOf("image/x-icon")) // image/x-icon
                 .defaultContentType(MediaType.APPLICATION_JSON); // Default to application/json
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOriginPatterns(
+                        "https://jobify-production-72be.up.railway.app/**"
+
+                )
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+//                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
