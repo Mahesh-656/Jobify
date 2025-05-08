@@ -21,6 +21,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/users")
+//@CrossOrigin(origins = "https://jobifyclient-production.up.railway.app")
 public class CurrentUserController {
 
     private final UserRepository userRepository;

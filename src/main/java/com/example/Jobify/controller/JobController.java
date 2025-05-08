@@ -20,6 +20,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/job")
+//@CrossOrigin(origins = "https://jobifyclient-production.up.railway.app")
 
 public class JobController {
 
